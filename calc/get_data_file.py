@@ -23,7 +23,7 @@ while count < len(data_sheet_price):
 
 try:
     """ Module connects and writes data in the sql datasbase
-    ********* now he print(" only select ")
+    ********* now he only insert new rows
     """
     connect_to_db = sqlite3.connect(DATABASES['default']['NAME'])
     cursor = connect_to_db.cursor()
