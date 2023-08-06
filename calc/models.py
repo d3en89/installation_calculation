@@ -10,3 +10,8 @@ class Data_inner(models.Model):
     uom = models.CharField(max_length=10, verbose_name='Ед. измерения', default='шт')
     cost = models.IntegerField(verbose_name='Цена')
     curency = models.CharField(max_length=5, verbose_name='Валюта', default='руб')
+
+
+class Data_innet_hash(models.Model):
+    id = models.AutoField(verbose_name='id', auto_created=True, primary_key=True)
+    price_hash = models.CharField(max_length=200, verbose_name='Hash')
