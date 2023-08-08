@@ -42,15 +42,17 @@ try:
                 for val in range(len(value_base)):
                     if value_base[val] != value_file[val]:
                         price_update_db.append((value_file[1],value_file[2],value_file[3],value_file[4],value_file[5], value_file[0]))
-                        data_sheet_price.pop(index_file)
+                data_sheet_price.pop(index_file)
+
 
     if len(data_sheet_price) > 0 :
-        sql_insert = 'INSERT INTO calc_data_inner values(NULL, ?, ?, ?, ?, ?, ?)'
-        cursor.executemany(sql_insert, data_sheet_price)
+       sql_insert = 'INSERT INTO calc_data_inner values(NULL, ?, ?, ?, ?, ?, ?)'
+       cursor.executemany(sql_insert, data_sheet_price)
 
     if len(price_update_db) > 0:
         sql_update = """UPDATE calc_data_inner  set name_of_works = ? , quantity = ? , uom = ? , cost = ? , curency = ? where index_sheet LIKE ? """
         cursor.executemany(sql_update, price_update_db)
+
     connect_to_db.commit()
     cursor.close()
 
