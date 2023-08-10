@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>{% block title %}Главная страница{% endblock %}</title>
+</head>
+
+<body>
+
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <h1>Расчет работ по видеонабллюдению</h1>
+        <link href="{% static 'css/minimal-table.css' %}" rel="stylesheet" type="text/css">
+    </header>
+
+    <table>
+      {% block list_price %}
+        <tbody>
+        {% for name_work in all_works %}
+            <tr>
+                <th> {{ name_work.0 }} </th>
+                <td> {{ name_work.1 }} </td>
+                <td> {{ name_work.2 }}  </td>
+                <td> {{ name_work.3 }}  </td>
+                <td> {{ name_work.4 }}  </td>
+                <td> {{ name_work.5 }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    {% endblock %}
+    </table>
+
+    <footer>
+        <p>Все права защищены!</p>
+        <p>Разработано выполнена собственными силами -> d3en89</p>
+        <p>Ссылка на мой репозиторий: <a target="_blank" href="https://github.com/d3en89">https://github.com/d3en89</a> </p>
+    </footer>
+
+</body>
+</html>

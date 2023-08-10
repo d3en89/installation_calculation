@@ -5,7 +5,7 @@ import sqlite3
 
 
 """ Getting data from xlsx file """
-work_file = load_workbook("../db/price.xlsx")
+work_file = load_workbook("../../../db/price.xlsx")
 get_first_sheet = work_file.sheetnames[0]
 sheet_price = work_file[str(get_first_sheet)]
 data_sheet_price = list(sheet_price.values)[1:]
@@ -43,7 +43,6 @@ try:
                     if value_base[val] != value_file[val]:
                         price_update_db.append((value_file[1],value_file[2],value_file[3],value_file[4],value_file[5], value_file[0]))
                 data_sheet_price.pop(index_file)
-
 
     if len(data_sheet_price) > 0 :
        sql_insert = 'INSERT INTO calc_data_inner values(NULL, ?, ?, ?, ?, ?, ?)'
