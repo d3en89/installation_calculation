@@ -14,29 +14,31 @@
         <h1>Расчет работ по видеонабллюдению</h1>
         <link href="{% static 'css/minimal-table.css' %}" rel="stylesheet" type="text/css">
     </header>
-
     <table id="pricelist">
 
         <tbody>
+            <th>№</th>
             <th>Название работ</th>
-            <th>Ед. измерения</th>
             <th>Цена</th>
             <th>Валюта</th>
+            <th>Ед. измерения</th>
             <th>Кол-во</th>
             <th>Стоимость</th>
 
             {% block list_price %}
               {% for name_work in all_works %}
                  <tr>
+                    <td width="4%"> {{ name_work.0 }} </td>
                     <td> {{ name_work.1 }} </td>
-                    <td> {{ name_work.3 }}  </td>
-                     <td> <span id="quantity" >{{ name_work.4 }}</span>  </td>
+                    <td> <span id="quantity" >{{ name_work.4 }}</span>  </td>
                     <td> {{ name_work.5 }} </td>
-                    <td> <input type="text " size="3" value="0" autocomplete='off'></td>
-                    <td> </td>
+                    <td> {{ name_work.3 }}  </td>
+                    <td> <input type="text " id={{ name_work.0 }} size="3" value="0" autocomplete='off' onchange="update_cell(this.id, this.value)"></td>
+                    <td id="sum_work">0</td>
                 </tr>
               {% endfor %}
             {% endblock %}
+            <td> </td>
             <td> </td>
             <td> </td>
             <td> </td>
