@@ -1,3 +1,6 @@
-calc/__pycache__/
-core/__pycache__/
-.venvl
+calc/__pycache__/*
+core/__pycache__/*
+venvl
+idea/*
+db/*
+.calc/migrations/*

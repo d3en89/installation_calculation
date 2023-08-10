@@ -15,7 +15,7 @@
         <link href="{% static 'css/minimal-table.css' %}" rel="stylesheet" type="text/css">
     </header>
 
-    <table>
+    <table id="pricelist">
 
         <tbody>
             <th>Название работ</th>
@@ -30,9 +30,9 @@
                  <tr>
                     <td> {{ name_work.1 }} </td>
                     <td> {{ name_work.3 }}  </td>
-                    <td> {{ name_work.4 }}  </td>
+                     <td> <span id="quantity" >{{ name_work.4 }}</span>  </td>
                     <td> {{ name_work.5 }} </td>
-                    <td> </td>
+                    <td> <input type="text " size="3" value="0" autocomplete='off'></td>
                     <td> </td>
                 </tr>
               {% endfor %}
@@ -40,9 +40,9 @@
             <td> </td>
             <td> </td>
             <td> </td>
-            <td> </td>
+            <td><button id="plus"> Подсчитать </button></td>
             <td>Итого:</td>
-            <td> </td>
+            <td><span id="total">0</span></td>
         </tbody>
 
     </table>
@@ -54,4 +54,9 @@
     </footer>
 
 </body>
+
+<script  text="text/javascript" src="{% static 'js/calc.js' %}"> </script>
+
+</script>
+
 </html>
