@@ -1,5 +1,5 @@
 from django.db import models
-
+from core.settings import MEDIA_ROOT
 # Create your models here.
 
 class Data_inner(models.Model):
@@ -15,3 +15,8 @@ class Data_inner(models.Model):
 class Data_innet_hash(models.Model):
     id = models.AutoField(verbose_name='id', auto_created=True, primary_key=True)
     price_hash = models.CharField(max_length=200, verbose_name='Hash')
+
+class File_upload(models.Model):
+    name = models.CharField(max_length=10)
+    file_point = models.FileField(upload_to=MEDIA_ROOT)
+

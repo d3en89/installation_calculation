@@ -1,4 +1,4 @@
-from  core.settings import DATABASES
+from core.settings import DATABASES
 import sqlite3
 
 
