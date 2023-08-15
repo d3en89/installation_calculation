@@ -1,11 +1,13 @@
 from openpyxl import load_workbook
-from core.settings import DATABASES
+from core.settings import DATABASES, MEDIA_ROOT
 import sqlite3
 
 
-def main():
+def main(url, file):
     """ Getting data from xlsx file """
-    work_file = load_workbook("db/price.xlsx")
+    #work_file = load_workbook("calc/static/tmp/price.xlsx")
+    #work_file = load_workbook(f'{url}\\{file}') ## for windows
+    work_file = load_workbook(f'{url}/{file}') ## for linux
     get_first_sheet = work_file.sheetnames[0]
     sheet_price = work_file[str(get_first_sheet)]
     data_sheet_price = list(sheet_price.values)[1:]
@@ -36,6 +38,9 @@ def main():
 
         # Compare value in base and value in sheet
         # if data diverges,  value in sheet add to execute
+        print(answer)
+        print("##################################")
+        print(data_sheet_price)
         for index_base, value_base in enumerate(answer):
             for index_file, value_file in enumerate(data_sheet_price):
                 if value_base[0] == value_file[0]:
@@ -44,10 +49,12 @@ def main():
                             price_update_db.append((value_file[1],value_file[2],value_file[3],value_file[4],value_file[5], value_file[0]))
                     data_sheet_price.pop(index_file)
 
+        print(data_sheet_price)
         if len(data_sheet_price) > 0 :
            sql_insert = 'INSERT INTO calc_data_inner values(NULL, ?, ?, ?, ?, ?, ?)'
            cursor.executemany(sql_insert, data_sheet_price)
 
+        print(price_update_db)
         if len(price_update_db) > 0:
             sql_update = """UPDATE calc_data_inner  set name_of_works = ? , quantity = ? , uom = ? , cost = ? , curency = ? where index_sheet LIKE ? """
             cursor.executemany(sql_update, price_update_db)
@@ -62,6 +69,3 @@ def main():
     finally:
         if (connect_to_db):
             connect_to_db.close()
-
-if __name__ == 'main':
-    main()

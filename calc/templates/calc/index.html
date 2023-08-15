@@ -52,16 +52,21 @@
         </tbody>
 
     </table>
+
     <p class="smaltext"><b>*Стоимость работ в себя не включает стоимость материалов</b></p>
+
     <form enctype="multipart/form-data" method="post">
         {% csrf_token %}
-    <p><input type="file" name="">
-    <input type="submit" value="Отправить"></p>
+<!--        {{ form.as_p }}-->
+        <p><input type="file" name="send_files">
+        <input type="submit" name="Send" value="Отправить"></p>
     </form> 
-        <form method="post">
-        {% csrf_token %}
-    <input type="submit" name="Update" value="Обновить"></p>
-    </form> 
+
+<!--    <form method="post">-->
+<!--        {% csrf_token %}-->
+<!--    <input type="submit" name="Update" value="Обновить"></p>-->
+<!--    </form> -->
+
     <footer>
         <p>Все права защищены!</p>
         <p>Разработано выполнена собственными силами -> d3en89</p>

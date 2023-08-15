@@ -1,35 +1,24 @@
 from django.shortcuts import render
-from django.core.files.storage import FileSystemStorage
-from django.http import HttpResponse, request
-from django.views.generic import CreateView
-
+from django.http import HttpResponse, request, HttpRequest
+from core.settings import MEDIA_ROOT
 
 from calc.static.script.get_data_db import get_price
 from calc.static.script import get_data_file
+from calc.models import File_upload
 
 # Create your views here.
-def index(request):
+
+def index(request : HttpRequest):
     #return HttpResponse("Hello, world. You're at the calc index.")
     list_price = {
         'all_works' : get_price()
     }
-    # if request.method == 'POST' and request.FILES:
-    #     print(request.FILES)
-    #     file = request.FILES['price_file']
-    #     fs = FileSystemStorage()
-    #     filename = fs.save(file.name, file)
-    #     file_path = fs.url(filename)
-    #     return render(request, 'calc/index.html', list_price)
+    match request.POST:
 
-    if request.method == 'POST' and request.POST['Update']:
-        get_data_file.main()
+        case {'Send': 'Отправить'}:
+            file = File_upload(name=str(request.FILES.get('send_files')),
+                               file_point=request.FILES.get('send_files'))
+            file.save()
+            get_data_file.main(MEDIA_ROOT, str(file.file_point))
+
     return render(request, 'calc/index.html', list_price)
-
-
-##### TEST ZONE ######
-
-# list_price = {
-#     'all_works' : get_price()
-# }
-
-#print(list_price['all_works'])
