@@ -1,5 +1,6 @@
 # installation_calculation
 Small Django is a project for easily counting from a downloaded excel spreadsheet \
+- this project work on UBUNTU 22.04 + python3.10
 - from use this calc you must install all packets in requirements.txt \
 - create django database
   - `python3 manage.py makemigrations`
