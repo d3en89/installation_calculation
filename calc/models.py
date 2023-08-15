@@ -14,7 +14,7 @@ class Data_inner(models.Model):
 
 
 class File_upload(models.Model):
-    #id = models.AutoField(verbose_name='id', auto_created=True, primary_key=True)
+    id = models.AutoField(verbose_name='id', auto_created=True, primary_key=True)
     name = models.CharField(max_length=100, default="price.xlsx")
-    file_point = models.FileField(upload_to=MEDIA_ROOT)
+    file_point = models.FileField(upload_to="tmp/")
 
