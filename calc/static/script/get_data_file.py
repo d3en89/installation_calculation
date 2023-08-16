@@ -5,9 +5,8 @@ import sqlite3
 
 def main(url, file):
     """ Getting data from xlsx file """
-    #work_file = load_workbook("calc/static/tmp/price.xlsx")
-    #work_file = load_workbook(f'{url}\\{file}') ## for windows
-    work_file = load_workbook(f'{url}/{file}') ## for linux
+
+    work_file = load_workbook(f'{url}/{file}')
     get_first_sheet = work_file.sheetnames[0]
     sheet_price = work_file[str(get_first_sheet)]
     data_sheet_price = list(sheet_price.values)[1:]
