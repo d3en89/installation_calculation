@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, request, HttpRequest
+from django.http import HttpResponse, HttpRequest
 from core.settings import MEDIA_ROOT, BASE_DIR
 import mimetypes
 from openpyxl import Workbook
@@ -8,7 +8,6 @@ from calc.static.script.get_data_db import get_price
 from calc.static.script import get_data_file
 from calc.models import File_upload
 
-# Create your views here.
 
 def index(request : HttpRequest):
     list_price = {
@@ -17,6 +16,10 @@ def index(request : HttpRequest):
 
     match request.POST:
         case {'Send': 'Отправить'}:
+
+            """ This case search and check file to upload on server
+                    """
+
             file = File_upload(name=str(request.FILES.get('send_files')),
                                file_point=request.FILES.get('send_files'))
             if file.name == "None":
@@ -28,6 +31,9 @@ def index(request : HttpRequest):
     return render(request, 'calc/index.html', list_price)
 
 def download_file(request):
+
+        """  Func generate template xlsx to download,
+        when use button Скачать шаблон """
 
         filename = 'temp_price.xlsx'
         filepath = f'{BASE_DIR}/calc/static/template/{filename}'
