@@ -37,7 +37,8 @@
                     <td id="sum_work">0</td>
                 </tr>
               {% endfor %}
-            
+            {% endblock %}
+
             <td> </td>
             <td> </td>
             <td> </td>
@@ -60,14 +61,19 @@
         <p><input class="pure-button"  type="file" name="send_files" style="margin-right: -50px;"><input class="pure-button"  type="submit" name="Send" value="Отправить"></p>
     </form> 
 
-    <p><button class="pure-button" style="margin-left: 67px;" name="Download" >Скачать шаблон</button></p>
+
+   <a  href="{% url 'download_file' %}" >
+    <p>
+        <button class="pure-button"style="margin-left: 40px;">Скачать шаблон файла</button> 
+    </p>
+    </a>
 
     <footer>
         <p>Все права защищены!</p>
         <p>Разработано выполнена собственными силами -> d3en89</p>
         <p>Ссылка на мой репозиторий: <a target="_blank" href="https://github.com/d3en89">https://github.com/d3en89</a> </p>
     </footer>
-{% endblock %}
+
 </body>
 
 <script  text="text/javascript" src="{% static 'js/calc.js' %}"> </script>
