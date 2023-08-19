@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['calc.sb-sd.ru', '212.57.97.235', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'calc_site',
     'calc',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'calc/templates/calc'),],
+        'DIRS': [os.path.join(BASE_DIR, 'calc/templates/calc'), os.path.join(BASE_DIR, 'calc_site/templates/calc_site'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,8 +128,13 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static/"),
 ]
+
 MEDIA_URL = 'tmp/'
 MEDIA_ROOT = BASE_DIR / 'calc/static/'
+
+IMAGE_URL = 'img/'
+IMAGE_ROOT = BASE_DIR / 'calc/static/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
