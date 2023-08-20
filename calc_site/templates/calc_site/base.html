@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!--<div id="sidebar">-->
+        <!--    <h2>My blog</h2>-->
+        <!--    <p>This is my blog.</p>-->
+        <!--</div>-->
+    </body>
+
+
+
+    <footer>
+        <p>Все права защищены!</p>
+        <p>Разработано выполнена собственными силами -> d3en89</p>
+        <p>Ссылка на мой репозиторий: <a target="_blank" href="https://github.com/d3en89">https://github.com/d3en89</a> </p>
+    </footer>
+
+    <script  text="text/javascript" src="{% static 'js/calc.js' %}"> </script>
+
+</html>
