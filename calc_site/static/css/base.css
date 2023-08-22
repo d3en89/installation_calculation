@@ -1,5 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+
 body {
-    background-image: url("/static/img/back_fomt.jpg")
+/*    background-image: url("/static/img/back_fomt.jpg")*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    background-repeat: no-repeat;
+    background: linear-gradient(#8b9da9, #fff6e4)
+
 }
 
 footer {
@@ -7,13 +16,34 @@ footer {
   font-size: xx-small;
 }
 
+
 .enter {
+/* span in calc_examp */
     border : 4;
 }
 
-.plus {
+
+.increase {
+/* button in calc_examp + */
+/*    Roundness: 10;*/
+    border-radius: 100%;
+    padding: 2px 4px;
+    border: none;
+
 }
 
-.minus {
 
+.decrease {
+/* button in calc_examp - */
+    border-radius: 100%;
+    padding: 2px 4px;
+    border: none;
+
+}
+
+#calc_examp {
+    padding: 10px;
+    color: rgba(#fff, 0.7);
+    font-size: 15px;
+    text-align: right;
 }
