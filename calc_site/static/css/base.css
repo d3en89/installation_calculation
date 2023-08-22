@@ -1,8 +1,19 @@
 body {
-    background-image: url("/static/img/back_fomt_1.jpg")
+    background-image: url("/static/img/back_fomt.jpg")
 }
 
 footer {
   text-align: center;
   font-size: xx-small;
+}
+
+.enter {
+    border : 4;
+}
+
+.plus {
+}
+
+.minus {
+
 }

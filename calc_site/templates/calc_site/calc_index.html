@@ -1,46 +1,36 @@
 {% extends "base.html" %}
 {% block title %}Видеонаблюдение{% endblock %}
 {% block content %}
-    <h1 style="align: center;">Расчет по монтажу</h1>
-    <table id="pricelist">
-
-        <tbody>
-            <th>№</th>
-            <th>Название работ</th>
-            <th>Цена</th>
-            <th>Валюта</th>
-            <th>Ед. измерения</th>
-            <th>Кол-во</th>
-            <th>Стоимость</th>
-
-            {% block list_price %}
-
-            {{ all_works }}
-
-<!--               {% for name_work in all_works %}
-                 <tr>
-                    <td width="4%"> {{ name_work.0 }} </td>
-                    <td> {{ name_work.1 }} </td>
-                    <td> <span id="quantity" >{{ name_work.4 }}</span>  </td>
-                    <td> {{ name_work.5 }} </td>
-                    <td> {{ name_work.3 }}  </td>
-                    <td> <input type="text " id={{ name_work.0 }} size="3" value="0" autocomplete='off' onchange="update_cell(this.id, this.value)"></td>
-                    <td id="sum_work">0</td>
+    <h1 style="text-align: center;">Расчет по монтажу</h1>
+    <div class="examp">
+        <!-- DIV when calculation example -->
+        {% block list_price %}
+        
+        <table id="calc_examp">
+            <h2>Быстрый расчет монтажа </h2>
+            <tbody>
+                <tr>
+                    <td>{{inner.0.1}}</td>
+                    <td><button id={{inner.0.0}} class="increase" name="increase" onclick="update_calc_examp(this.id, this.name)">+</button></td>
+                    <td><span id={{inner.0.0}}  class="enter" name="enter">0</span></td>
+                    <td><button id={{inner.0.0}} class="decrease" name="decrease" onclick="update_calc_examp(this.id, this.name)">-</button></td>
+                    <td>{{inner.0.3}}</td>
+                    <td><span id={{inner.0.0}} name="price_cost">{{inner.0.4}}</span></td>
+                    <td><span id={{inner.0.0}} name="cost" >0</span></td>
                 </tr>
-              {% endfor %} -->
-            {% endblock %}
+                <tr>
+                    <td>{{out.0.1}}</td>
+                    <td><button id={{out.0.0}} class="increase" name="increase" onclick="update_calc_examp(this.id, this.name)">+</button></td>
+                    <td><span id={{out.0.0}}  class="enter" name="enter">0</span></td>
+                    <td><button id={{out.0.0}} class="decrease" name="decrease" onclick="update_calc_examp(this.id, this.name)">-</button></td>
+                    <td>{{out.0.3}}</td>
+                    <td><span id={{out.0.0}} name="price_cost">{{out.0.4}}</span></td>
+                    <td><span id={{out.0.0}} name="cost" >0</span></td>
+                </tr>
+            </tbody>
+        </table>
+        {% endblock %}
 
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td>Итого:</td>
-            <td><span id="total">0</span></td>
-        </tbody>
-
-    </table>
-
-    <p class="smaltext"><b>*Стоимость работ в себя не включает стоимость материалов</b></p>
+    </div>
 
 {% endblock %}

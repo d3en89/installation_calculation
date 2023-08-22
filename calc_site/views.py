@@ -7,7 +7,9 @@ from calc_site.static.script.get_data_db import get_price
 def index(request: HttpRequest):
         ### All Price
     list_price = {
-        'all_works': get_price("all")
+        'all_works': get_price("all"),
+        'inner': get_price('inner'),
+        'out': get_price('out')
     }
 
 

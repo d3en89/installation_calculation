@@ -23,5 +23,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', calc.views.index, name='index'),
-    path('download_file', calc.views.download_file, name='download_file')
+    path('/download_file', calc.views.download_file, name='download_file')
 ]

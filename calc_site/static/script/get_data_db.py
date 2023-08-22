@@ -14,18 +14,9 @@ def get_price(kit):
                 query = """select index_sheet, name_of_works, quantity, uom, cost, curency 
                             from calc_data_inner"""
             case "inner":
-                query = """select index_sheet, name_of_works, quantity, uom, cost, curency 
-                            from calc_data_inner 
-                            where name_of_works = ' Установка видеокамеры (внутренняя) '
-                            and name_of_works LIKE 'Обжим кабеля' """
-                            #  'and name_of_works = " Обжим кабеля "'
-                             #  'and name_of_works = " Установка распаечных коробок "')
+                query = """select index_sheet, name_of_works, quantity, uom, cost, curency from calc_data_inner where name_of_works in ('Установка видеокамеры (внутренняя)', 'Обжим кабеля', 'Установка распаечных коробок')"""
             case "out":
-                cursor.execute(
-                    'select index_sheet, name_of_works, quantity, uom, cost, curency from calc_data_inner where '
-                    'name_of_works = " Установка видеокамеры (уличная) "'
-                    'and name_of_works = " Обжим кабеля "'
-                    'and name_of_works = " Установка распаечных коробок "')
+                query = """select index_sheet, name_of_works, quantity, uom, cost, curency from calc_data_inner where name_of_works  in ('Установка видеокамеры (уличная)', 'Обжим кабеля', 'Установка распаечных коробок')"""
 
         cursor.execute(query)
         answer = cursor.fetchall()
@@ -38,6 +29,3 @@ def get_price(kit):
     finally:
         if (connect_to_db):
             connect_to_db.close()
-
-
-print(get_price('inner'))
