@@ -15,11 +15,14 @@ def main(url, file):
     """ Check data list 
         if there None in the  first 6 collumns, this row deleted
         """
-    count = 1
+    count = 0
     while count < len(data_sheet_price):
         if None in data_sheet_price[count][:6]:
             data_sheet_price.pop(count)
             count -= 1
+        else:
+            data_sheet_price[count] = list(data_sheet_price[count])
+            data_sheet_price[count][1] = data_sheet_price[count][1].strip()
         count += 1
 
 
