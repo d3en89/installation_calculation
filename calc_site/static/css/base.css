@@ -17,44 +17,13 @@ footer {
 }
 
 
-.enter {
-/* span in calc_examp */
-    border : 4;
-}
-
-
-.increase {
-/* button in calc_examp + */
-/*    Roundness: 10;*/
-    color: --bs-secondary-color;
-    border-radius: 100%;
-    padding: 2px 4px;
-    border: none;
-
-}
-
-
-.decrease {
-/* button in calc_examp - */
-    border-radius: 100%;
-    padding: 2px 4px;
-    border: none;
-
-}
-
-/*#calc_examp {
-    padding: 10px;
-    color: rgba(#fff, 0.7);
-    font-size: 15px;
-    text-align: right;
-}*/
-
 .btn-circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 14px;
     text-align: center;
-    padding-left: 0;
+    padding-top: -0px;
+    padding-left: 0px;
     padding-right: 0;
     font-size: 16px;
 }
@@ -65,4 +34,32 @@ footer {
     margin-left: 15px;
     margin-right: 15px;
     padding: 15px 0px 25px 10px;
+}
+
+.calc_examp_name_of_works{
+    
+    width: 65%;   
+}
+
+.calc_examp_quantity {
+    text-align: center;
+    width: 5%;
+}
+
+.calc_examp_uom {
+    text-align: center;
+    width: 5%;
+}
+
+.calc_examp_price_cost {
+    width: 7%;
+}
+
+.calc_examp_cost {
+    padding-left: 10px;
+    width: 150px;
+}
+
+.row {
+    font-size: 25px;
 }
