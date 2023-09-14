@@ -60,6 +60,15 @@ footer {
     width: 150px;
 }
 
-.row {
+.container {
     font-size: 25px;
+}
+
+.calc_examp_complexity{
+    margin-top: 15px;
+    margin-left: 7.3%;
+}
+
+.calc_examp_complexity_radio {
+    
 }

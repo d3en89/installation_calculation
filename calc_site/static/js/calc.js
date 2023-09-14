@@ -15,17 +15,18 @@ function update_cell(id, count) {
 }
 
 function update_calc_examp(id_var, name_var) {
+  var level_work = $('input[name="complexity"]:checked').val();
   var quantity  = $('#calc_examp span#' + id_var + '[name="enter"]');
   var cost  = $('#calc_examp span#' + id_var + '[name="cost"]');
   var price_cost  = $('#calc_examp span#' + id_var + '[name="price_cost"]');
-  
+
   if(name_var == "increase"){
     quantity.text(Number(quantity.text()) + 1);
-    cost.text(Number(quantity.text()) * Number(price_cost.text()));
+    cost.text(Number(quantity.text()) * Number(price_cost.text()) + (Number(quantity.text()) * Number(level_work) ) );
   }
   
   if(name_var == "decrease" && quantity.text() > 0){
     quantity.text(Number(quantity.text()) - 1);
-    cost.text(Number(quantity.text()) * Number(price_cost.text()));
+    cost.text(Number(quantity.text()) * Number(price_cost.text()) + (Number(quantity.text()) * Number(level_work) )  );
   }
 }
