@@ -1,14 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:100);*/
 
 body {
-/*    background-image: url("/static/img/back_fomt.jpg")*/
-    display: flex;
+    background-image: url("/static/img/back_fomt.jpg")
+/*    display: flex;
     justify-content: center;
     align-items: center;
     font-family: Roboto, sans-serif;
     background-repeat: no-repeat;
     background: linear-gradient(#8b9da9, #fff6e4)
-
+*/
 }
 
 footer {
@@ -26,6 +26,7 @@ footer {
 .increase {
 /* button in calc_examp + */
 /*    Roundness: 10;*/
+    color: --bs-secondary-color;
     border-radius: 100%;
     padding: 2px 4px;
     border: none;
@@ -41,9 +42,27 @@ footer {
 
 }
 
-#calc_examp {
+/*#calc_examp {
     padding: 10px;
     color: rgba(#fff, 0.7);
     font-size: 15px;
     text-align: right;
+}*/
+
+.btn-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 16px;
+}
+
+.examp {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px 0px 25px 10px;
 }

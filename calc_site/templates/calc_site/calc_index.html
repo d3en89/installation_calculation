@@ -6,12 +6,13 @@
         <!-- DIV when calculation example -->
         {% block list_price %}
         
-        <table id="calc_examp">
-            <h2>Быстрый расчет монтажа </h2>
-            <tbody>
+        <table id="calc_examp" class="container">
+            
+            <tbody class="row">
+                <h2> Быстрый расчет монтажа </h2>
                 <tr>
                     <td>{{inner.0.1}}</td>
-                    <td><button id={{inner.0.0}} class="increase" name="increase" onclick="update_calc_examp(this.id, this.name)">+</button></td>
+                    <td><button id={{inner.0.0}} class="btn btn-primary btn-circle" name="increase" onclick="update_calc_examp(this.id, this.name)">+</button></td>
                     <td><span id={{inner.0.0}}  class="enter" name="enter">0</span></td>
                     <td><button id={{inner.0.0}} class="decrease" name="decrease" onclick="update_calc_examp(this.id, this.name)">-</button></td>
                     <td>{{inner.0.3}}</td>
