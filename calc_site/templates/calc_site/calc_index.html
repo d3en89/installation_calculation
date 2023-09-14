@@ -24,8 +24,7 @@
                     
                     <td class="calc_examp_price_cost" ><span id={{inner.0.0}}  class="enter"  name="price_cost">{{inner.0.4}}</span></td>
                     
-                    <td class="calc_examp_cost" ><span id={{inner.0.0}} name="cost" >0</span></td>
-                
+                    <td class="calc_examp_cost" ><span id={{inner.0.0}} name="cost" >0</span></td>                
                 </tr>
 
                 <tr>
@@ -37,6 +36,27 @@
                     <td class="calc_examp_price_cost"><span id={{out.0.0}}  class="enter"  name="price_cost">{{out.0.4}}</span></td>
                     <td class="calc_examp_cost"><span id={{out.0.0}} name="cost" >0</span></td>
                 </tr>
+
+                <tr>
+                    <td class="calc_examp_name_of_works">{{inner.2.1}}</td>
+                    <td><button id={{inner.2.0}} class="btn btn-primary btn-circle" name="increase" onclick="update_calc_examp_def(this.id, this.name)">+</button></td>
+                    <td class="calc_examp_quantity"><span id={{inner.2.0}}  class="enter" name="enter">0</span></td>
+                    <td ><button id={{inner.2.0}} class="btn btn-primary btn-circle" name="decrease" onclick="update_calc_examp_def(this.id, this.name)">-</button></td>
+                    <td class="calc_examp_uom">{{inner.2.3}}</td>
+                    <td class="calc_examp_price_cost"><span id={{inner.2.0}}  class="enter"  name="price_cost">{{inner.2.4}}</span></td>
+                    <td class="calc_examp_cost"><span id={{inner.2.0}} name="cost" >0</span></td>
+                </tr>
+
+                <tr>
+                    <td class="calc_examp_name_of_works">{{inner.1.1}}</td>
+                    <td><button id={{inner.1.0}} class="btn btn-primary btn-circle" name="increase" onclick="update_calc_examp_def(this.id, this.name)">+</button></td>
+                    <td class="calc_examp_quantity"><span id={{inner.1.0}}  class="enter" name="enter">0</span></td>
+                    <td ><button id={{inner.1.0}} class="btn btn-primary btn-circle" name="decrease" onclick="update_calc_examp_def(this.id, this.name)">-</button></td>
+                    <td class="calc_examp_uom">{{inner.1.3}}</td>
+                    <td class="calc_examp_price_cost"><span id={{inner.1.0}}  class="enter"  name="price_cost">{{inner.1.4}}</span></td>
+                    <td class="calc_examp_cost"><span id={{inner.1.0}} name="cost" >0</span></td>
+                </tr>
+                
             </tbody>
         </table>
         
