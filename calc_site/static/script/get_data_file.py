@@ -57,9 +57,9 @@ def main(url, file):
         cursor.close()
 
     except sqlite3.DatabaseError as error:
-        print("Ошибка при подключении к sqlite data", error)
+        print('Ошибка при подключении к sqlite data', error)
     except sqlite3.Error as error:
-        print("Ошибка при подключении к sqlite", error)
+        print('Ошибка при подключении к sqlite', error)
     finally:
         if (connect_to_db):
             connect_to_db.close()
