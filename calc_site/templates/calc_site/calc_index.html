@@ -2,10 +2,10 @@
 {% block title %}Видеонаблюдение{% endblock %}
 {% block content %}
     <h1 style="text-align: center;">Расчет по монтажу</h1>
-    
+    {% block list_price %}
     <div class="examp">
         <!-- DIV when calculation example -->
-        {% block list_price %}
+        
         
         <table id="calc_examp" class="container">
             
@@ -13,17 +13,11 @@
                 <h2> Быстрый расчет монтажа </h2>
                 <tr>
                     <td class="calc_examp_name_of_works">{{inner.0.1}}</td>
-
-                    <td><button id={{inner.0.0}} class="btn btn-primary btn-circle" name="increase" onclick="update_calc_examp(this.id, this.name)" >+</button></td>
-                    
-                    <td class="calc_examp_quantity" ><span id={{inner.0.0}}  class="enter" name="enter">0</span></td>
-                    
-                    <td ><button id={{inner.0.0}} class="btn btn-primary btn-circle" name="decrease" onclick="update_calc_examp(this.id, this.name)">-</button></td>
-                    
+                    <td><button id={{inner.0.0}} class="btn btn-primary btn-circle" name="increase" onclick="update_calc_examp(this.id, this.name)" >+</button></td>                    
+                    <td class="calc_examp_quantity" ><span id={{inner.0.0}}  class="enter" name="enter">0</span></td>                    
+                    <td ><button id={{inner.0.0}} class="btn btn-primary btn-circle" name="decrease" onclick="update_calc_examp(this.id, this.name)">-</button></td>    
                     <td class="calc_examp_uom" >{{inner.0.3}}</td>
-                    
                     <td class="calc_examp_price_cost" ><span id={{inner.0.0}}  class="enter"  name="price_cost">{{inner.0.4}}</span></td>
-                    
                     <td class="calc_examp_cost" ><span id={{inner.0.0}} name="cost" >0</span></td>                
                 </tr>
 
@@ -66,8 +60,29 @@
             <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="1500" /> Средний
             <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="3500" /> Сложный
         </div>
-        {% endblock %}
 
+
+        
     </div>
+    <div class="examp_list_price">
+        <h3 style="text-align: center;">Прайс лист актуальный на <script>document.write(new Date().getFullYear())</script></h3>
+        <table>
+        <tbody>
+            <th class="examp_list_price_table_name">Название работ</th>
+            <th class="examp_list_price_table_quantity">Цена</th>
+            <th class="examp_list_price_table_curency">Валюта</th>
 
+              {% for name_work in all_works_short %}
+                 <tr>
+                    <td class="examp_list_price_table_name"> {{ name_work.1 }} </td>
+                    <td class="examp_list_price_table_quantity"> <span id="quantity" >{{ name_work.4 }}</span>  </td>
+                    <td class="examp_list_price_table_curency"> {{ name_work.5 }} </td>
+                </tr>
+              {% endfor %}
+            <td> </td>
+
+        </tbody>
+    </table>
+    </div>
+    {% endblock %}
 {% endblock %}

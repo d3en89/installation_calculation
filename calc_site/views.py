@@ -8,6 +8,7 @@ def index(request: HttpRequest):
         ### All Price
     list_price = {
         'all_works': get_price("all"),
+        'all_works_short': get_price("all")[0:50],
         'inner': get_price('inner'),
         'out': get_price('out')
     }
