@@ -14,15 +14,26 @@ function update_cell(id, count) {
   total.innerHTML = total_cost;
 }
 
-function update_examp_total_sum() {
+function update_examp_total_sum(key=0) {
   var examp_total_cost = $('.calc_examp_cost_span_1');
-  var column_cost =   $('#calc_examp .calc_examp_cost')
+  var column_cost = $('#calc_examp .calc_examp_cost')
   var sum = 0
+  var quantity_cams = $('.calc_examp_quantity') 
+  var cost_cams = $('.calc_examp_price_cost')
+  var total_cost_position = $('.calc_examp_cost')
+  
+  for (let i = 0; i < 2 ; i++) {
+    total_cost_position[i].innerHTML = (Number(quantity_cams[i].innerText)) * Number(cost_cams[i].innerText) + (Number(quantity_cams[i].innerText) * Number(key))
+  }
   for (let i = 0; i < column_cost.length; i++) {
     sum += Number(column_cost[i].innerText)
   }
+  
   examp_total_cost.text(sum)
 }
+
+
+
 
 function update_calc_examp(id_var, name_var) {
   var level_work = $('input[name="complexity"]:checked').val();

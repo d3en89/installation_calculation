@@ -13,9 +13,9 @@
                 <h2> Быстрый расчет монтажа </h2>
                 <div class="m-3">
                     Выбирете сложность монтажа:<br>
-                    <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="0" checked /> Простой
-                    <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="1500" /> Средний
-                    <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="3500" /> Сложный 
+                    <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="0" onclick="update_examp_total_sum(this.value)" checked /> Простой
+                    <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="1500" onclick="update_examp_total_sum(this.value)" /> Средний
+                    <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="3500" onclick="update_examp_total_sum(this.value)" /> Сложный 
 
                 </div>
 
