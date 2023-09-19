@@ -8,10 +8,10 @@
         
         
         <table id="calc_examp" class="container">
-            
+           <!-- class="calc_examp_complexity"  -->
             <tbody class="row">
                 <h2> Быстрый расчет монтажа </h2>
-                <div class="calc_examp_complexity">
+                <div class="m-3">
                     Выбирете сложность монтажа:<br>
                     <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="0" checked /> Простой
                     <input id="calc_examp_complexity_radio" class="calc_examp_complexity_radio" type="radio" name="complexity" value="1500" /> Средний
@@ -64,20 +64,20 @@
 
         </table>
 
-        <div class="calc_examp_cost_sum">
+        <div class="calc_examp_cost_sum m-3">
             <hr>
             <p>Итого :<span class="calc_examp_cost_span_1 ">0</span></p>
 
         </div>
-
+    </div>
 
 
         
 
     <div class="examp_list_price">
         <h3 style="text-align: center;">Прайс лист актуальный на <script>document.write(new Date().getFullYear())</script></h3>
-        <table>
-        <tbody>
+        <table class="examp_list_price_table m-3">
+        <tbody class="examp_list_price_table_tbody">
             <th class="examp_list_price_table_name">Название работ</th>
             <th class="examp_list_price_table_quantity">Цена</th>
             <th class="examp_list_price_table_curency">Валюта</th>
