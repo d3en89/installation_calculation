@@ -1,22 +1,11 @@
-/*@import url(https://fonts.googleapis.com/css?family=Roboto:100);*/
-
 body {
-/*    background-image: url("/static/img/back_fomt.jpg");*/
     background: linear-gradient(#8b9da9, #fff6e4)
-/*    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Roboto, sans-serif;
-    
-    background: linear-gradient(#8b9da9, #fff6e4)
-*/
 }
 
 footer {
   text-align: center;
   font-size: xx-small;
 }
-
 
 .btn-circle {
     width: 26px;
@@ -89,7 +78,6 @@ footer {
     margin-right: 15px;
     padding: 15px 40px 25px 40px;
     width: 60%;
-
 }
 
 .examp_list_price_table {

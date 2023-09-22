@@ -32,9 +32,6 @@ function update_examp_total_sum(key=0) {
   examp_total_cost.text(sum)
 }
 
-
-
-
 function update_calc_examp(id_var, name_var) {
   var level_work = $('input[name="complexity"]:checked').val();
   var quantity  = $('#calc_examp span#' + id_var + '[name="enter"]');
