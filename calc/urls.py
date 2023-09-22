@@ -16,16 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from calc import views
+import calc.views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    #path('', views.index, name='calc'),
-    #path('download_file', views.download_file, name='download_file')
-    path('', include('calc_site.urls')),
-    path('calc_v1', include('calc.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', calc.views.index, name='index'),
+    path('/download_file', calc.views.download_file, name='download_file')
+]

@@ -15,14 +15,11 @@ def main(url, file):
     """ Check data list 
         if there None in the  first 6 collumns, this row deleted
         """
-    count = 0
+    count = 1
     while count < len(data_sheet_price):
         if None in data_sheet_price[count][:6]:
             data_sheet_price.pop(count)
             count -= 1
-        else:
-            data_sheet_price[count] = list(data_sheet_price[count])
-            data_sheet_price[count][1] = data_sheet_price[count][1].strip()
         count += 1
 
 
@@ -45,7 +42,7 @@ def main(url, file):
                 if value_base[0] == value_file[0]:
                     for val in range(len(value_base)):
                         if value_base[val] != value_file[val]:
-                            price_update_db.append((value_file[1],value_file[2],value_file[3],value_file[4],value_file[5], value_file[0]))
+                            price_update_db.append((value_file[1],value_file[2].strip(),value_file[3],value_file[4],value_file[5], value_file[0]))
                     data_sheet_price.pop(index_file)
 
         if len(data_sheet_price) > 0 :
@@ -60,9 +57,9 @@ def main(url, file):
         cursor.close()
 
     except sqlite3.DatabaseError as error:
-        print("Ошибка при подключении к sqlite data", error)
+        print('Ошибка при подключении к sqlite data', error)
     except sqlite3.Error as error:
-        print("Ошибка при подключении к sqlite", error)
+        print('Ошибка при подключении к sqlite', error)
     finally:
         if (connect_to_db):
             connect_to_db.close()

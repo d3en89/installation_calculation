@@ -1,0 +1,106 @@
+body {
+    background: linear-gradient(#8b9da9, #fff6e4)
+}
+
+footer {
+  text-align: center;
+  font-size: xx-small;
+}
+
+.btn-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 14px;
+    text-align: center;
+    padding-top: -0px;
+    padding-left: 0px;
+    padding-right: 0;
+    font-size: 16px;
+}
+
+.examp {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    margin-top: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 15px 40px 25px 40px;
+}
+
+.calc_examp_name_of_works{
+    width: 65%;   
+}
+
+.calc_examp_quantity {
+    text-align: center;
+    width: 5%;
+}
+
+.calc_examp_uom {
+    text-align: center;
+    width: 5%;
+}
+
+.calc_examp_price_cost {
+    width: 7%;
+}
+
+.calc_examp_cost {
+    padding-left: 10px;
+    width: 150px;
+}
+
+.container {
+    font-size: 25px;
+}
+
+.calc_examp_complexity{
+    margin-top: 15px;
+    margin-left: 7.3%;
+}
+
+
+.calc_examp_cost_sum {
+    font-size: 25px;
+    text-align: right;
+}
+
+.calc_examp_cost_span_1 {
+    margin-right: 12%;
+    padding-left: 15px;
+}
+
+.examp_list_price {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    margin-top: 25px;
+    margin-left: 20%;
+    margin-right: 15px;
+    padding: 15px 40px 25px 40px;
+    width: 60%;
+}
+
+.examp_list_price_table {
+    width: 100%;
+    margin: auto;
+}
+
+.examp_list_price_table_tbody {
+    margin: auto;
+}
+
+
+.examp_list_price_table_name {
+    width: 65%;
+}
+
+.examp_list_price_table_quantity {  
+    padding-left: 16px;
+    width: 25px;
+}
+
+.examp_list_price_table_curency {
+    text-align: center;
+    width: 25px;
+}
+
