@@ -56,7 +56,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'calc/templates/calc'), os.path.join(BASE_DIR, 'calc_site/templates/calc_site'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'calc/templates/calc'), os.path.join(BASE_DIR, 'calc_site/templates/calc_site'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
