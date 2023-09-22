@@ -10,6 +10,6 @@ Small Django is a project for easily counting from a downloaded excel spreadshee
  manual to configure (https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04-ru)
 - start gunicorn server  with you ip
 - when your server up, database is empty, you must import  template price.xlsx on site
-    - if there None in the  first 6 collumns, this row deleted (when you upload your price on server)
+- if there None in the  first 6 collumns, this row deleted (when you upload your price on server)
 
 
